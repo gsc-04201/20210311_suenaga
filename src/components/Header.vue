@@ -23,7 +23,7 @@ export default {
     addressBtn() {
       axios.get(item + this.zipcode).then((res) => {
         this.addressData = res.data.results[0];
-      })
+      });
     }
   }
 };
