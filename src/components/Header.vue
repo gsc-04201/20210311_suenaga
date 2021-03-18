@@ -7,10 +7,7 @@
 </template>
 
 <script>
-import axios from "axios"
-let url = 'https://apis.postcode-jp.com/api/v4/postcodes/{postcode} \
-  -G -v \
-  -d "apikey= Z45vTswxQiHHvKp1oPxiy5wi8kUvQmyGVdN6EYW';
+// import axios from "axios"
 export default {
   data() {
     return {
@@ -20,11 +17,17 @@ export default {
   }, 
   methods: {
      addressBtn() {
-      const addressData = axios.get(url+ this.postcode).then((res) => console.log(res));
-      console.log(addressData);
-      this.address = addressData;
+      console.log("hello");
+      // const addressData = axios.get('https://apis.postcode-jp.com/api/v4/postcodes/2790031?apiKey= Z45vTswxQiHHvKp1oPxiy5wi8kUvQmyGVdN6EYW').then((res) => console.log(res));
+      // const json = JSON.stringify(addressData);
+      // console.log(addressData);
+      // console.log(json);
+      // return this.address = addressData;
     }
   }
+};
+</script>
+
   //   methods: {
   //   addressBtn() {
   //     console.log('addressBtn')
@@ -34,5 +37,4 @@ export default {
   //     });
   //   }
   // }
-};
-</script>
+  

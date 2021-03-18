@@ -1,8 +1,8 @@
 <template>
   <div>
     <input type="text" v-model="zip" />
-    <button @click="getAddress">住所自動入力</button>
-    <p>Address： {{ address }}</p>
+    <!-- <button @click="getAddress">住所自動入力</button> -->
+    <!-- <p>Address： {{ address }}</p> -->
   </div>
 </template>
 
