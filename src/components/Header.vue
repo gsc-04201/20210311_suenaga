@@ -1,13 +1,15 @@
 <template>
-  <form>
+  <div id="header">
     <input type="text" v-model="postcode">
       <button @click="addressBtn">住所自動入力</button>
       <p>Address：{{ address }}</p>
-  </form>
+  </div>
 </template>
 
 <script>
-// import axios from "axios"
+import axios from "axios"
+let url = 'https://apis.postcode-jp.com/api/v4/postcodes/';
+let key = '?apiKey= Z45vTswxQiHHvKp1oPxiy5wi8kUvQmyGVdN6EYW';
 export default {
   data() {
     return {
@@ -16,25 +18,10 @@ export default {
     }
   }, 
   methods: {
-     addressBtn() {
-      console.log("hello");
-      // const addressData = axios.get('https://apis.postcode-jp.com/api/v4/postcodes/2790031?apiKey= Z45vTswxQiHHvKp1oPxiy5wi8kUvQmyGVdN6EYW').then((res) => console.log(res));
-      // const json = JSON.stringify(addressData);
-      // console.log(addressData);
-      // console.log(json);
-      // return this.address = addressData;
+    addressBtn() {
+      this.address = axios.get( url + this.postcode + key).then((res) => console.log(res.data[0].allAddress));
     }
   }
 };
 </script>
 
-  //   methods: {
-  //   addressBtn() {
-  //     console.log('addressBtn')
-  //     axios.get('https://api.zipaddress.net/?zipcode=' + this.zipcode).then((res) => {
-  //       console.log(res)
-  //     // this.addressData = res.data.results[0];
-  //     });
-  //   }
-  // }
-  
