@@ -18,8 +18,10 @@ export default {
     }
   }, 
   methods: {
-    addressBtn() {
-      this.address = axios.get( url + this.postcode + key).then((res) => console.log(res.data[0].allAddress));
+    async addressBtn() {
+      const address = await axios.get( url + this.postcode + key);
+      console.log(address.data[0].allAddress);
+      this.address = (address.data[0].allAddress);
     }
   }
 };
